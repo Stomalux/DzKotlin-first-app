@@ -14,17 +14,18 @@ fun main() {
 //println(" по проценту $lastDigit")
     val lastDigit = likes % 10
 
-    if (lastDigit >= 2 && lastDigit <= 4) {
+    if (lastDigit == 1) println("Понравилось $likes  человеу !")
+    else if (lastDigit >= 2 && lastDigit <= 4) {
         println("Вам поставили лайки $likes  $CHELOVEKA !")
-    } else {
+    }else if (lastDigit == 0 && likes == 0) {println("Никому не понравилось!")
+        } else {
         println("Вам поставили лайки $likes  $CHELOVEK !")
     }
-    if (lastDigit == 1) println("Понравилось $likes  человеу !")
 
-    if(lastDigit >= 2) println("Понравилось $likes  людям !")
-    if(lastDigit == 0) println("Никому не понравилось!")
+
+    if (lastDigit >= 2) println("Понравилось $likes  людям !")
+
 }
-
 
 
 // последний символ в строке по длине строки  - 1

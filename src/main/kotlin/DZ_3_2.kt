@@ -38,14 +38,14 @@ fun commission(tipKard: String, summOld: Int, summNew: Int): Int {
     var comissionKop = 0
     when (tipKard) {
         "VK_Pay" -> {
-            println("VK_Pay")
+            println(tipKard)
             if (summNew >= 1500000 || (summNew + summOld) >= 4000000) {
                 println("Превышен суточный/месячный лимит по аккаунту!")
                 ok = false
             }
         }
         "Maestro", "Mastercard" -> {
-            println("Maestro")
+            println(tipKard)
             if ((summNew + summOld) <= 7500000) {
                 println("комиссии нет!")
                 comissionKop = 0
@@ -53,9 +53,8 @@ fun commission(tipKard: String, summOld: Int, summNew: Int): Int {
             } else comissionKop = (summNew * commisConstM + commisD).toInt()
         }
         "Visa", "Mir" -> {
-            println("Visa")
+            println(tipKard)
             val commissionOtSum = (summNew * commisConst).toInt()
-            println("Visa")
             comissionKop = if (commissionOtSum <= commisMin) commisMin else commissionOtSum
         }
     }
